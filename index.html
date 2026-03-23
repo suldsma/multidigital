@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi Digital | Diseños Personalizados</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <div class="logo-container">
+            <div class="logo-icon">🎨</div>
+            <div class="logo">Multi Digital</div>
+        </div>
+        <nav class="nav-menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#proceso">Cómo Funciona</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <main class="hero" id="inicio">
+        <h1>Tu Diseño es Nuestra Pasión</h1>
+        <p>Creamos stickers, toppers y papelería única para que tus eventos sean inolvidables.</p>
+        <a href="#catalogo" class="boton-principal">VER NUESTROS PRODUCTOS</a>
+    </main>
+
+    <!-- CATÁLOGO DE PRODUCTOS -->
+    <section id="catalogo">
+        <h2>Nuestros Diseños</h2>
+        <p class="subtitulo">Especialistas en cumpleaños, baby showers y eventos corporativos</p>
+        
+        <div class="productos-grid">
+            <div class="producto-card">
+                <div class="producto-imagen">🎨</div>
+                <h3>Stickers Personalizados</h3>
+                <p class="descripcion">Pack de 20 stickers con tu diseño</p>
+                <p class="precio">$2,500</p>
+                <button class="btn-agregar">Consultar</button>
+            </div>
+
+            <div class="producto-card">
+                <div class="producto-imagen">🎂</div>
+                <h3>Toppers para Torta</h3>
+                <p class="descripcion">Toppers personalizados para tu torta</p>
+                <p class="precio">$1,800</p>
+                <button class="btn-agregar">Consultar</button>
+            </div>
+
+            <div class="producto-card">
+                <div class="producto-imagen">🎪</div>
+                <h3>Banderines Decorativos</h3>
+                <p class="descripcion">Guirnalda de banderines personalizados</p>
+                <p class="precio">$3,200</p>
+                <button class="btn-agregar">Consultar</button>
+            </div>
+
+            <div class="producto-card">
+                <div class="producto-imagen">🍬</div>
+                <h3>Etiquetas Candy Bar</h3>
+                <p class="descripcion">Set de 12 etiquetas para mesa dulce</p>
+                <p class="precio">$2,000</p>
+                <button class="btn-agregar">Consultar</button>
+            </div>
+
+            <div class="producto-card">
+                <div class="producto-imagen">💌</div>
+                <h3>Invitaciones Digitales</h3>
+                <p class="descripcion">Invitación digital personalizada</p>
+                <p class="precio">$1,500</p>
+                <button class="btn-agregar">Consultar</button>
+            </div>
+
+            <div class="producto-card">
+                <div class="producto-imagen">🎉</div>
+                <h3>Kit Cumpleaños Completo</h3>
+                <p class="descripcion">Todo lo necesario para tu fiesta</p>
+                <p class="precio">$8,500</p>
+                <button class="btn-agregar">Consultar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section id="proceso" class="proceso-section">
+        <h2>Cómo Funciona</h2>
+        <div class="pasos-container">
+            <div class="paso">
+                <div class="paso-numero">1</div>
+                <h3>Elegí tu Producto</h3>
+                <p>Navegá nuestro catálogo y seleccioná lo que necesitás</p>
+            </div>
+            <div class="paso">
+                <div class="paso-numero">2</div>
+                <h3>Personalizá</h3>
+                <p>Contanos tu idea y trabajaremos juntos en el diseño</p>
+            </div>
+            <div class="paso">
+                <div class="paso-numero">3</div>
+                <h3>Recibí</h3>
+                <p>Te entregamos tu pedido listo para usar</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto-section">
+        <h2>Contactanos</h2>
+        <div class="contacto-container">
+            <div class="contacto-form">
+                <h3>Envianos un Mensaje</h3>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="boton-principal">Enviar Mensaje</button>
+                    <div id="form-message" class="form-message"></div>
+                </form>
+            </div>
+
+            <div class="contacto-info">
+                <h3>Información</h3>
+                <div class="info-item">
+                    <span class="icono">📧</span>
+                    <div>
+                        <p class="info-titulo">Email</p>
+                        <p>multidigital@gmail.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icono">📱</span>
+                    <div>
+                        <p class="info-titulo">Teléfono</p>
+                        <p>+54 9 11 1234-5678</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="icono">📍</span>
+                    <div>
+                        <p class="info-titulo">Ubicación</p>
+                        <p>Concordia, Entre Ríos, Argentina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2025 Multi Digital - Susana Ledesma</p>
+        <p class="footer-subtitle">Diseños personalizados con amor ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
