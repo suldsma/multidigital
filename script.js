@@ -128,16 +128,25 @@ if (contactForm) {
         btnEnviar.textContent = 'Enviando...';
         mostrarMensaje('Enviando mensaje...', 'cargando');
 
+        // ⚠️ FORMSPREE: reemplazá la URL con tu endpoint real de formspree.io
+        // Pasos: 1) Entrá a https://formspree.io  2) Creá una cuenta gratis
+        // 3) Creá un nuevo formulario  4) Copiá tu URL (ej: https://formspree.io/f/xxxxxxxx)
+        const FORMSPREE_URL = 'https://formspree.io/f/TU_ID_AQUI';
+
         const formData = new FormData(contactForm);
 
-        fetch('enviar.php', { method: 'POST', body: formData })
-            .then(r => r.ok ? r.text() : r.text().then(msg => Promise.reject(msg)))
+        fetch(FORMSPREE_URL, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+            .then(r => r.ok ? r.json() : r.json().then(data => Promise.reject(data)))
             .then(() => {
                 mostrarMensaje('✅ ¡Mensaje enviado! Te respondemos pronto 💜', 'exito');
                 contactForm.reset();
             })
-            .catch(msg => {
-                mostrarMensaje(typeof msg === 'string' && msg ? msg : '❌ Error al enviar. Escribinos por WhatsApp.', 'error');
+            .catch(() => {
+                mostrarMensaje('❌ Error al enviar. Escribinos por WhatsApp.', 'error');
             })
             .finally(() => {
                 btnEnviar.disabled = false;
