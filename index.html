@@ -4,170 +4,430 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multi Digital | Diseños Personalizados</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
+    <!-- BARRA SUPERIOR -->
+    <div class="topbar">
+        ✨ Envíos digitales a todo el país &nbsp;|&nbsp; 📱 WhatsApp: +54 3454172380 &nbsp;|&nbsp; ❤️ Diseños con amor desde Concordia
+    </div>
+
     <!-- ENCABEZADO -->
     <header>
         <div class="logo-container">
-            <div class="logo-icon">🎨</div>
-            <div class="logo">Multi Digital</div>
+            <img src="logo.png" alt="Multi Digital Logo" class="logo-img"
+                 onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+            <div class="logo-icon" id="logo-fallback" style="display:none;">🎨</div>
+            <div class="logo-text">
+                <span class="logo-nombre">Multi Digital</span>
+                <span class="logo-slogan">Diseños que enamoran</span>
+            </div>
         </div>
         <nav class="nav-menu">
             <a href="#inicio">Inicio</a>
-            <a href="#catalogo">Catálogo</a>
+            <a href="#categorias">Productos</a>
             <a href="#proceso">Cómo Funciona</a>
+            <a href="#testimonios">Reseñas</a>
             <a href="#contacto">Contacto</a>
         </nav>
+        <a href="https://wa.me/543454172380" target="_blank" class="header-whatsapp">💬 Consultar</a>
         <button class="menu-toggle" aria-label="Menú">
-            <span></span>
-            <span></span>
-            <span></span>
+            <span></span><span></span><span></span>
         </button>
     </header>
 
-    <!-- SECCIÓN PRINCIPAL (HERO) -->
-    <main class="hero" id="inicio">
-        <h1>Tu Diseño es Nuestra Pasión</h1>
-        <p>Creamos stickers, toppers y papelería única para que tus eventos sean inolvidables.</p>
-        <a href="#catalogo" class="boton-principal">VER NUESTROS PRODUCTOS</a>
-    </main>
-
-    <!-- CATÁLOGO DE PRODUCTOS -->
-    <section id="catalogo">
-        <h2>Nuestros Diseños</h2>
-        <p class="subtitulo">Especialistas en cumpleaños, baby showers y eventos corporativos</p>
-        
-        <div class="productos-grid">
-            <div class="producto-card">
-                <div class="producto-imagen">🎨</div>
-                <h3>Stickers Personalizados</h3>
-                <p class="descripcion">Pack de 20 stickers con tu diseño</p>
-                <p class="precio">$2,500</p>
-                <button class="btn-agregar">Consultar</button>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge">🌈 Papelería personalizada para eventos</div>
+            <h1>Tu fiesta merece<br><span class="hero-highlight">diseños únicos</span></h1>
+            <p>Stickers, toppers, agendas, candy bar y mucho más.<br>Cada diseño hecho especialmente para vos. ✨</p>
+            <div class="hero-btns">
+                <a href="#categorias" class="btn-primary">Ver productos</a>
+                <a href="https://wa.me/543454172380" target="_blank" class="btn-outline">💬 Escribinos</a>
             </div>
-
-            <div class="producto-card">
-                <div class="producto-imagen">🎂</div>
-                <h3>Toppers para Torta</h3>
-                <p class="descripcion">Toppers personalizados para tu torta</p>
-                <p class="precio">$1,800</p>
-                <button class="btn-agregar">Consultar</button>
+            <div class="hero-stats">
+                <div class="stat"><strong>+500</strong><span>Clientes felices</span></div>
+                <div class="stat-sep">|</div>
+                <div class="stat"><strong>100%</strong><span>Personalizado</span></div>
+                <div class="stat-sep">|</div>
+                <div class="stat"><strong>⭐ 5/5</strong><span>Calificación</span></div>
             </div>
-
-            <div class="producto-card">
-                <div class="producto-imagen">🎪</div>
-                <h3>Banderines Decorativos</h3>
-                <p class="descripcion">Guirnalda de banderines personalizados</p>
-                <p class="precio">$3,200</p>
-                <button class="btn-agregar">Consultar</button>
-            </div>
-
-            <div class="producto-card">
-                <div class="producto-imagen">🍬</div>
-                <h3>Etiquetas Candy Bar</h3>
-                <p class="descripcion">Set de 12 etiquetas para mesa dulce</p>
-                <p class="precio">$2,000</p>
-                <button class="btn-agregar">Consultar</button>
-            </div>
-
-            <div class="producto-card">
-                <div class="producto-imagen">💌</div>
-                <h3>Invitaciones Digitales</h3>
-                <p class="descripcion">Invitación digital personalizada</p>
-                <p class="precio">$1,500</p>
-                <button class="btn-agregar">Consultar</button>
-            </div>
-
-            <div class="producto-card">
-                <div class="producto-imagen">🎉</div>
-                <h3>Kit Cumpleaños Completo</h3>
-                <p class="descripcion">Todo lo necesario para tu fiesta</p>
-                <p class="precio">$8,500</p>
-                <button class="btn-agregar">Consultar</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-img-wrap">
+                <img src="imagen1.jpg" alt="Diseños Multi Digital"
+                     onerror="this.style.display='none'; this.parentElement.classList.add('hero-img-fallback');">
+                <div class="hero-img-badge">🎉 ¡Nuevo!</div>
             </div>
         </div>
     </section>
 
+    <!-- FRANJA DE CARACTERÍSTICAS -->
+    <div class="features-bar">
+        <div class="feature"><span>🚀</span> Entrega rápida</div>
+        <div class="feature"><span>🎨</span> Diseño exclusivo</div>
+        <div class="feature"><span>💌</span> Envío digital</div>
+        <div class="feature"><span>✏️</span> Revisiones incluidas</div>
+        <div class="feature"><span>❤️</span> Hecho con amor</div>
+    </div>
+
+    <!-- CATEGORÍAS / PRODUCTOS -->
+    <section id="categorias" class="categorias-section">
+        <div class="section-header">
+            <span class="section-tag">Nuestros productos</span>
+            <h2>¿Qué estás buscando?</h2>
+            <p>Especialistas en cumpleaños, baby showers, eventos corporativos y más</p>
+        </div>
+
+        <div class="productos-grid">
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen1.jpg" alt="Stickers Personalizados"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">🎨</div>
+                    <div class="card-badge nuevo">Nuevo</div>
+                </div>
+                <div class="card-body">
+                    <h3>Stickers Personalizados</h3>
+                    <p>Pack de 20 stickers con tu diseño exclusivo</p>
+                    <div class="card-footer">
+                        <span class="precio">$2,500</span>
+                        <button class="btn-consultar" data-producto="Stickers Personalizados" data-precio="$2,500">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen2.jpg" alt="Toppers para Torta"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">🎂</div>
+                </div>
+                <div class="card-body">
+                    <h3>Toppers para Torta</h3>
+                    <p>Toppers personalizados para tu torta especial</p>
+                    <div class="card-footer">
+                        <span class="precio">$1,800</span>
+                        <button class="btn-consultar" data-producto="Toppers para Torta" data-precio="$1,800">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card destacado">
+                <div class="card-img-wrap">
+                    <img src="imagen3.jpg" alt="Banderines Decorativos"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">🎪</div>
+                    <div class="card-badge popular">⭐ Popular</div>
+                </div>
+                <div class="card-body">
+                    <h3>Banderines Decorativos</h3>
+                    <p>Guirnalda de banderines personalizados</p>
+                    <div class="card-footer">
+                        <span class="precio">$3,200</span>
+                        <button class="btn-consultar" data-producto="Banderines Decorativos" data-precio="$3,200">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen4.jpg" alt="Etiquetas Candy Bar"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">🍬</div>
+                </div>
+                <div class="card-body">
+                    <h3>Etiquetas Candy Bar</h3>
+                    <p>Set de 12 etiquetas para mesa dulce</p>
+                    <div class="card-footer">
+                        <span class="precio">$2,000</span>
+                        <button class="btn-consultar" data-producto="Etiquetas Candy Bar" data-precio="$2,000">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen5.jpg" alt="Invitaciones Digitales"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">💌</div>
+                </div>
+                <div class="card-body">
+                    <h3>Invitaciones Digitales</h3>
+                    <p>Invitación digital personalizada para compartir</p>
+                    <div class="card-footer">
+                        <span class="precio">$1,500</span>
+                        <button class="btn-consultar" data-producto="Invitaciones Digitales" data-precio="$1,500">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card destacado">
+                <div class="card-img-wrap">
+                    <img src="imagen6.jpg" alt="Kit Cumpleaños Completo"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">🎉</div>
+                    <div class="card-badge mas-vendido">🔥 Más vendido</div>
+                </div>
+                <div class="card-body">
+                    <h3>Kit Cumpleaños Completo</h3>
+                    <p>Todo lo necesario para tu fiesta perfecta</p>
+                    <div class="card-footer">
+                        <span class="precio">$8,500</span>
+                        <button class="btn-consultar" data-producto="Kit Cumpleaños Completo" data-precio="$8,500">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen7.jpg" alt="Agendas Personalizadas"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">📅</div>
+                </div>
+                <div class="card-body">
+                    <h3>Agendas Personalizadas</h3>
+                    <p>Agendas únicas con tu nombre y diseño favorito</p>
+                    <div class="card-footer">
+                        <span class="precio precio-consultar">Consultar</span>
+                        <button class="btn-consultar" data-producto="Agendas Personalizadas" data-precio="">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen8.jpg" alt="Cuadernos Pediátricos"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">👶</div>
+                </div>
+                <div class="card-body">
+                    <h3>Cuadernos de Controles Pediátricos</h3>
+                    <p>Cuadernos para registrar el crecimiento de tu bebé</p>
+                    <div class="card-footer">
+                        <span class="precio precio-consultar">Consultar</span>
+                        <button class="btn-consultar" data-producto="Cuadernos Pediátricos" data-precio="">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="producto-card">
+                <div class="card-img-wrap">
+                    <img src="imagen9.jpg" alt="Material Escolar"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="card-img-fallback">🎒</div>
+                </div>
+                <div class="card-body">
+                    <h3>Material Escolar</h3>
+                    <p>Carpetas, etiquetas y útiles personalizados para el cole</p>
+                    <div class="card-footer">
+                        <span class="precio precio-consultar">Consultar</span>
+                        <button class="btn-consultar" data-producto="Material Escolar" data-precio="">Consultar</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BANNER CTA -->
+    <div class="banner-cta">
+        <div class="banner-cta-content">
+            <h2>¿Tenés una idea en mente?</h2>
+            <p>Contanos qué necesitás y lo hacemos realidad juntos 🎨</p>
+            <a href="https://wa.me/543454172380" target="_blank" class="btn-primary">💬 Hablar por WhatsApp</a>
+        </div>
+    </div>
+
     <!-- CÓMO FUNCIONA -->
     <section id="proceso" class="proceso-section">
-        <h2>Cómo Funciona</h2>
+        <div class="section-header">
+            <span class="section-tag">Súper fácil</span>
+            <h2>Cómo Funciona</h2>
+            <p>En pocos pasos tenés tu diseño listo</p>
+        </div>
         <div class="pasos-container">
-            <div class="paso">
+            <div class="paso" data-info="Explorá todas nuestras categorías: stickers, toppers, candy bar, agendas y más. Si no encontrás lo que buscás, ¡escribinos y lo creamos para vos!">
+                <div class="paso-icono">🛍️</div>
                 <div class="paso-numero">1</div>
                 <h3>Elegí tu Producto</h3>
-                <p>Navegá nuestro catálogo y seleccioná lo que necesitás</p>
+                <p>Navegá el catálogo y seleccioná lo que necesitás</p>
+                <span class="paso-ver-mas">Ver más ▾</span>
+                <div class="paso-detalle">Explorá todas nuestras categorías: stickers, toppers, candy bar, agendas y más. Si no encontrás lo que buscás, ¡escribinos y lo creamos para vos!</div>
             </div>
-            <div class="paso">
+            <div class="paso-flecha">→</div>
+            <div class="paso" data-info="Contanos el nombre, temática, colores y referencias que te gustan. Trabajamos con vos hasta que el diseño sea exactamente lo que soñaste.">
+                <div class="paso-icono">✏️</div>
                 <div class="paso-numero">2</div>
                 <h3>Personalizá</h3>
-                <p>Contanos tu idea y trabajaremos juntos en el diseño</p>
+                <p>Contanos tu idea y trabajamos juntos en el diseño</p>
+                <span class="paso-ver-mas">Ver más ▾</span>
+                <div class="paso-detalle">Contanos el nombre, temática, colores y referencias que te gustan. Trabajamos con vos hasta que el diseño sea exactamente lo que soñaste.</div>
             </div>
-            <div class="paso">
+            <div class="paso-flecha">→</div>
+            <div class="paso" data-info="Una vez aprobado el diseño, te enviamos los archivos listos para imprimir en formato PDF o JPG en alta resolución. ¡En menos de 48hs!">
+                <div class="paso-icono">🚀</div>
                 <div class="paso-numero">3</div>
-                <h3>Recibí</h3>
-                <p>Te entregamos tu pedido listo para usar</p>
+                <h3>Recibí tu Diseño</h3>
+                <p>Te entregamos los archivos listos para imprimir</p>
+                <span class="paso-ver-mas">Ver más ▾</span>
+                <div class="paso-detalle">Una vez aprobado el diseño, te enviamos los archivos listos para imprimir en formato PDF o JPG en alta resolución. ¡En menos de 48hs!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="testimonios-section">
+        <div class="section-header">
+            <span class="section-tag">Lo que dicen nuestras clientas</span>
+            <h2>Reseñas ⭐</h2>
+        </div>
+        <div class="testimonios-grid">
+            <div class="testimonio-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"El kit de cumpleaños quedó hermoso, exactamente lo que pedí. Mis hijos quedaron encantados y mis amigas me preguntaron dónde lo hice. ¡100% recomendable!"</p>
+                <div class="testimonio-autor">
+                    <div class="autor-avatar">M</div>
+                    <div><strong>María Laura</strong><span>Concordia, ER</span></div>
+                </div>
+            </div>
+            <div class="testimonio-card destacado">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"Los stickers quedaron increíbles, los colores tal cual los quería. Atención rápida y súper amable. Ya encargué por segunda vez y siempre quedo feliz."</p>
+                <div class="testimonio-autor">
+                    <div class="autor-avatar">V</div>
+                    <div><strong>Valeria</strong><span>Paraná, ER</span></div>
+                </div>
+            </div>
+            <div class="testimonio-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>"La agenda personalizada fue un regalo perfecto para mi amiga. Muy buena calidad del diseño y entrega rapidísima. ¡Muchas gracias!"</p>
+                <div class="testimonio-autor">
+                    <div class="autor-avatar">C</div>
+                    <div><strong>Carolina</strong><span>Buenos Aires</span></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="contacto-section">
-        <h2>Contactanos</h2>
+        <div class="section-header claro">
+            <span class="section-tag">Hablemos</span>
+            <h2>Contactanos</h2>
+            <p>Respondemos en menos de 24hs 💜</p>
+        </div>
         <div class="contacto-container">
-            <div class="contacto-form">
+            <div class="contacto-form-wrap">
                 <h3>Envianos un Mensaje</h3>
                 <form id="contact-form">
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <label for="nombre">Tu nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamás?" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Tu email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
                     </div>
                     <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <label for="mensaje">Tu mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Contanos qué necesitás..." required></textarea>
                     </div>
-                    <button type="submit" class="boton-principal">Enviar Mensaje</button>
+                    <button type="submit" class="btn-primary btn-full">Enviar Mensaje ✉️</button>
                     <div id="form-message" class="form-message"></div>
                 </form>
             </div>
 
-            <div class="contacto-info">
+            <div class="contacto-info-wrap">
                 <h3>Información</h3>
-                <div class="info-item">
-                    <span class="icono">📧</span>
+                <div class="info-card">
+                    <div class="info-icono">📧</div>
                     <div>
                         <p class="info-titulo">Email</p>
-                        <p>multidigital@gmail.com</p>
+                        <p>susanaledesma91@gmail.com</p>
                     </div>
                 </div>
-                <div class="info-item">
-                    <span class="icono">📱</span>
+                <div class="info-card">
+                    <div class="info-icono">📱</div>
                     <div>
-                        <p class="info-titulo">Teléfono</p>
-                        <p>+54 9 11 1234-5678</p>
+                        <p class="info-titulo">WhatsApp</p>
+                        <p>+54 3454172380</p>
+                        <a href="https://wa.me/543454172380" target="_blank" class="whatsapp-btn">
+                            💬 Escribinos por WhatsApp
+                        </a>
                     </div>
                 </div>
-                <div class="info-item">
-                    <span class="icono">📍</span>
+                <div class="info-card">
+                    <div class="info-icono">📍</div>
                     <div>
                         <p class="info-titulo">Ubicación</p>
                         <p>Concordia, Entre Ríos, Argentina</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icono">🕐</div>
+                    <div>
+                        <p class="info-titulo">Horario de atención</p>
+                        <p>Lunes a Viernes: 9:00 - 18:00</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PIE DE PÁGINA -->
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 Multi Digital - Susana Ledesma</p>
-        <p class="footer-subtitle">Diseños personalizados con amor ❤️</p>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="logo.png" alt="Multi Digital" class="footer-logo"
+                     onerror="this.style.display='none';">
+                <span class="footer-nombre">Multi Digital</span>
+                <p>Diseños personalizados con amor ❤️<br>Concordia, Entre Ríos, Argentina</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegación</h4>
+                <a href="#inicio">Inicio</a>
+                <a href="#categorias">Productos</a>
+                <a href="#proceso">Cómo Funciona</a>
+                <a href="#testimonios">Reseñas</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-links">
+                <h4>Productos</h4>
+                <a href="#categorias">Stickers</a>
+                <a href="#categorias">Toppers</a>
+                <a href="#categorias">Candy Bar</a>
+                <a href="#categorias">Agendas</a>
+                <a href="#categorias">Material Escolar</a>
+            </div>
+            <div class="footer-contacto">
+                <h4>Contacto rápido</h4>
+                <a href="https://wa.me/543454172380" target="_blank" class="whatsapp-btn">💬 WhatsApp</a>
+                <p>susanaledesma91@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Multi Digital — Susana Ledesma. Todos los derechos reservados.</p>
+        </div>
     </footer>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/543454172380" target="_blank" class="whatsapp-flotante" title="Consultar por WhatsApp">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="white">
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.494 2.027 7.807L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.27 22.516c-.343.965-1.99 1.845-2.742 1.963-.703.11-1.59.156-2.563-.16-.592-.19-1.352-.444-2.326-.87-4.094-1.77-6.768-5.94-6.972-6.217-.203-.277-1.657-2.203-1.657-4.203s1.05-2.985 1.422-3.393c.373-.407.812-.508 1.082-.508.27 0 .54.003.778.014.25.013.585-.095.916.698.343.814 1.166 2.813 1.268 3.017.102.203.17.44.034.71-.136.272-.204.44-.407.678-.203.238-.428.531-.61.713-.203.203-.414.422-.178.827.237.407 1.05 1.733 2.254 2.808 1.548 1.38 2.854 1.806 3.261 2.01.407.203.644.17.882-.102.237-.27 1.015-1.185 1.287-1.592.27-.407.54-.34.915-.203.373.135 2.372 1.118 2.778 1.322.407.203.677.305.778.474.102.168.102.967-.24 1.933z"/>
+        </svg>
+    </a>
 
     <script src="script.js"></script>
 </body>
