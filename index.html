@@ -21,11 +21,16 @@
     <!-- ENCABEZADO -->
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Multi Digital Logo" class="logo-img"
+            <!-- Imagen del logo principal -->
+            <img src="logo.png" alt="MultiDigital Logo" class="logo-img"
                  onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
-            <div class="logo-icon" id="logo-fallback" style="display:none;">🎨</div>
+            <!-- Fallback: si el logo no carga, muestra la imagen1 o el emoji -->
+            <div class="logo-icon" id="logo-fallback" style="display:none;">
+                <img src="imagen1.jpg" alt="MultiDigital"
+                     onerror="this.style.display='none'; this.parentElement.textContent='🎨';">
+            </div>
             <div class="logo-text">
-                <span class="logo-nombre">Multi Digital</span>
+                <span class="logo-nombre">MultiDigital</span>
                 <span class="logo-slogan">Diseños que enamoran</span>
             </div>
         </div>
@@ -97,7 +102,9 @@
                 <div class="card-img-wrap">
                     <img src="imagen1.jpg" alt="Stickers Personalizados"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">🎨</div>
+                    <div class="card-img-fallback" style="display:none;">
+                        <img src="imagen1.jpg" alt="" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.innerHTML='🎨';">
+                    </div>
                     <div class="card-badge nuevo">Nuevo</div>
                 </div>
                 <div class="card-body">
@@ -105,7 +112,7 @@
                     <p>Pack de 20 stickers con tu diseño exclusivo</p>
                     <div class="card-footer">
                         <span class="precio">$2,500</span>
-                        <button class="btn-consultar" data-producto="Stickers Personalizados" data-precio="$2,500">Consultar</button>
+                        <button class="btn-consultar" data-producto="Stickers Personalizados" data-precio="$2,500">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -114,23 +121,23 @@
                 <div class="card-img-wrap">
                     <img src="imagen2.jpg" alt="Toppers para Torta"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">🎂</div>
+                    <div class="card-img-fallback" style="display:none;">🎂</div>
                 </div>
                 <div class="card-body">
                     <h3>Toppers para Torta</h3>
                     <p>Toppers personalizados para tu torta especial</p>
                     <div class="card-footer">
                         <span class="precio">$1,800</span>
-                        <button class="btn-consultar" data-producto="Toppers para Torta" data-precio="$1,800">Consultar</button>
+                        <button class="btn-consultar" data-producto="Toppers para Torta" data-precio="$1,800">💬 Consultar</button>
                     </div>
                 </div>
             </div>
 
-            <div class="producto-card destacado">
+            <div class="producto-card">
                 <div class="card-img-wrap">
                     <img src="imagen3.jpg" alt="Banderines Decorativos"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">🎪</div>
+                    <div class="card-img-fallback" style="display:none;">🎪</div>
                     <div class="card-badge popular">⭐ Popular</div>
                 </div>
                 <div class="card-body">
@@ -138,7 +145,7 @@
                     <p>Guirnalda de banderines personalizados</p>
                     <div class="card-footer">
                         <span class="precio">$3,200</span>
-                        <button class="btn-consultar" data-producto="Banderines Decorativos" data-precio="$3,200">Consultar</button>
+                        <button class="btn-consultar" data-producto="Banderines Decorativos" data-precio="$3,200">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -147,14 +154,14 @@
                 <div class="card-img-wrap">
                     <img src="imagen4.jpg" alt="Etiquetas Candy Bar"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">🍬</div>
+                    <div class="card-img-fallback" style="display:none;">🍬</div>
                 </div>
                 <div class="card-body">
                     <h3>Etiquetas Candy Bar</h3>
                     <p>Set de 12 etiquetas para mesa dulce</p>
                     <div class="card-footer">
                         <span class="precio">$2,000</span>
-                        <button class="btn-consultar" data-producto="Etiquetas Candy Bar" data-precio="$2,000">Consultar</button>
+                        <button class="btn-consultar" data-producto="Etiquetas Candy Bar" data-precio="$2,000">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -163,23 +170,23 @@
                 <div class="card-img-wrap">
                     <img src="imagen5.jpg" alt="Invitaciones Digitales"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">💌</div>
+                    <div class="card-img-fallback" style="display:none;">💌</div>
                 </div>
                 <div class="card-body">
                     <h3>Invitaciones Digitales</h3>
                     <p>Invitación digital personalizada para compartir</p>
                     <div class="card-footer">
                         <span class="precio">$1,500</span>
-                        <button class="btn-consultar" data-producto="Invitaciones Digitales" data-precio="$1,500">Consultar</button>
+                        <button class="btn-consultar" data-producto="Invitaciones Digitales" data-precio="$1,500">💬 Consultar</button>
                     </div>
                 </div>
             </div>
 
-            <div class="producto-card destacado">
+            <div class="producto-card">
                 <div class="card-img-wrap">
                     <img src="imagen6.jpg" alt="Kit Cumpleaños Completo"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">🎉</div>
+                    <div class="card-img-fallback" style="display:none;">🎉</div>
                     <div class="card-badge mas-vendido">🔥 Más vendido</div>
                 </div>
                 <div class="card-body">
@@ -187,7 +194,7 @@
                     <p>Todo lo necesario para tu fiesta perfecta</p>
                     <div class="card-footer">
                         <span class="precio">$8,500</span>
-                        <button class="btn-consultar" data-producto="Kit Cumpleaños Completo" data-precio="$8,500">Consultar</button>
+                        <button class="btn-consultar" data-producto="Kit Cumpleaños Completo" data-precio="$8,500">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -196,14 +203,14 @@
                 <div class="card-img-wrap">
                     <img src="imagen7.jpg" alt="Agendas Personalizadas"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">📅</div>
+                    <div class="card-img-fallback" style="display:none;">📅</div>
                 </div>
                 <div class="card-body">
                     <h3>Agendas Personalizadas</h3>
                     <p>Agendas únicas con tu nombre y diseño favorito</p>
                     <div class="card-footer">
-                        <span class="precio precio-consultar">Consultar</span>
-                        <button class="btn-consultar" data-producto="Agendas Personalizadas" data-precio="">Consultar</button>
+                        <span class="precio precio-consultar">A consultar</span>
+                        <button class="btn-consultar" data-producto="Agendas Personalizadas" data-precio="">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -212,14 +219,14 @@
                 <div class="card-img-wrap">
                     <img src="imagen8.jpg" alt="Cuadernos Pediátricos"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">👶</div>
+                    <div class="card-img-fallback" style="display:none;">👶</div>
                 </div>
                 <div class="card-body">
                     <h3>Cuadernos de Controles Pediátricos</h3>
                     <p>Cuadernos para registrar el crecimiento de tu bebé</p>
                     <div class="card-footer">
-                        <span class="precio precio-consultar">Consultar</span>
-                        <button class="btn-consultar" data-producto="Cuadernos Pediátricos" data-precio="">Consultar</button>
+                        <span class="precio precio-consultar">A consultar</span>
+                        <button class="btn-consultar" data-producto="Cuadernos Pediátricos" data-precio="">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -228,14 +235,14 @@
                 <div class="card-img-wrap">
                     <img src="imagen9.jpg" alt="Material Escolar"
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="card-img-fallback">🎒</div>
+                    <div class="card-img-fallback" style="display:none;">🎒</div>
                 </div>
                 <div class="card-body">
                     <h3>Material Escolar</h3>
                     <p>Carpetas, etiquetas y útiles personalizados para el cole</p>
                     <div class="card-footer">
-                        <span class="precio precio-consultar">Consultar</span>
-                        <button class="btn-consultar" data-producto="Material Escolar" data-precio="">Consultar</button>
+                        <span class="precio precio-consultar">A consultar</span>
+                        <button class="btn-consultar" data-producto="Material Escolar" data-precio="">💬 Consultar</button>
                     </div>
                 </div>
             </div>
@@ -260,32 +267,59 @@
             <p>En pocos pasos tenés tu diseño listo</p>
         </div>
         <div class="pasos-container">
-            <div class="paso" data-info="Explorá todas nuestras categorías: stickers, toppers, candy bar, agendas y más. Si no encontrás lo que buscás, ¡escribinos y lo creamos para vos!">
-                <div class="paso-icono">🛍️</div>
-                <div class="paso-numero">1</div>
-                <h3>Elegí tu Producto</h3>
-                <p>Navegá el catálogo y seleccioná lo que necesitás</p>
-                <span class="paso-ver-mas">Ver más ▾</span>
-                <div class="paso-detalle">Explorá todas nuestras categorías: stickers, toppers, candy bar, agendas y más. Si no encontrás lo que buscás, ¡escribinos y lo creamos para vos!</div>
+
+            <!-- PASO 1: usa imagen4 (candy bar / productos) -->
+            <div class="paso">
+                <div class="paso-img-wrap">
+                    <img src="imagen4.jpg" alt="Elegí tu producto"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="paso-img-fallback" style="display:none;">🛍️</div>
+                </div>
+                <div class="paso-content">
+                    <div class="paso-numero">1</div>
+                    <h3>Elegí tu Producto</h3>
+                    <p>Navegá el catálogo y seleccioná lo que necesitás</p>
+                    <span class="paso-ver-mas">Ver más ▾</span>
+                    <div class="paso-detalle">Explorá todas nuestras categorías: stickers, toppers, candy bar, agendas y más. Si no encontrás lo que buscás, ¡escribinos y lo creamos para vos!</div>
+                </div>
             </div>
+
             <div class="paso-flecha">→</div>
-            <div class="paso" data-info="Contanos el nombre, temática, colores y referencias que te gustan. Trabajamos con vos hasta que el diseño sea exactamente lo que soñaste.">
-                <div class="paso-icono">✏️</div>
-                <div class="paso-numero">2</div>
-                <h3>Personalizá</h3>
-                <p>Contanos tu idea y trabajamos juntos en el diseño</p>
-                <span class="paso-ver-mas">Ver más ▾</span>
-                <div class="paso-detalle">Contanos el nombre, temática, colores y referencias que te gustan. Trabajamos con vos hasta que el diseño sea exactamente lo que soñaste.</div>
+
+            <!-- PASO 2: usa imagen7 (agendas / personalización) -->
+            <div class="paso">
+                <div class="paso-img-wrap">
+                    <img src="imagen7.jpg" alt="Personalizá tu diseño"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="paso-img-fallback" style="display:none;">✏️</div>
+                </div>
+                <div class="paso-content">
+                    <div class="paso-numero">2</div>
+                    <h3>Personalizá</h3>
+                    <p>Contanos tu idea y trabajamos juntos en el diseño</p>
+                    <span class="paso-ver-mas">Ver más ▾</span>
+                    <div class="paso-detalle">Contanos el nombre, temática, colores y referencias que te gustan. Trabajamos con vos hasta que el diseño sea exactamente lo que soñaste.</div>
+                </div>
             </div>
+
             <div class="paso-flecha">→</div>
-            <div class="paso" data-info="Una vez aprobado el diseño, te enviamos los archivos listos para imprimir en formato PDF o JPG en alta resolución. ¡En menos de 48hs!">
-                <div class="paso-icono">🚀</div>
-                <div class="paso-numero">3</div>
-                <h3>Recibí tu Diseño</h3>
-                <p>Te entregamos los archivos listos para imprimir</p>
-                <span class="paso-ver-mas">Ver más ▾</span>
-                <div class="paso-detalle">Una vez aprobado el diseño, te enviamos los archivos listos para imprimir en formato PDF o JPG en alta resolución. ¡En menos de 48hs!</div>
+
+            <!-- PASO 3: usa imagen6 (kit completo / recibir) -->
+            <div class="paso">
+                <div class="paso-img-wrap">
+                    <img src="imagen6.jpg" alt="Recibí tu diseño"
+                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="paso-img-fallback" style="display:none;">🚀</div>
+                </div>
+                <div class="paso-content">
+                    <div class="paso-numero">3</div>
+                    <h3>Recibí tu Diseño</h3>
+                    <p>Te entregamos los archivos listos para imprimir</p>
+                    <span class="paso-ver-mas">Ver más ▾</span>
+                    <div class="paso-detalle">Una vez aprobado el diseño, te enviamos los archivos listos para imprimir en formato PDF o JPG en alta resolución. ¡En menos de 48hs!</div>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -304,7 +338,7 @@
                     <div><strong>María Laura</strong><span>Concordia, ER</span></div>
                 </div>
             </div>
-            <div class="testimonio-card destacado">
+            <div class="testimonio-card">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
                 <p>"Los stickers quedaron increíbles, los colores tal cual los quería. Atención rápida y súper amable. Ya encargué por segunda vez y siempre quedo feliz."</p>
                 <div class="testimonio-autor">
@@ -427,4 +461,10 @@
     <!-- BOTÓN WHATSAPP FLOTANTE -->
     <a href="https://wa.me/543454172380" target="_blank" class="whatsapp-flotante" title="Consultar por WhatsApp">
         <svg viewBox="0 0 32 32" width="30" height="30" fill="white">
-            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.494 2.027 7.807L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.27 22.516c-.343.965-1.99 1.845-2.742 1.963-.703.11-1.59.156-2.563-.16-.592-.19-1.352-.444-2.326-.87-4.094-1.77-6.768-5.94-6.972-6.217-.203-.277-1.657-2.203-1.657-4.203s1.05-2.985 1.422-3.393c.373-.407.812-.508 1.082-.508.27 0 .54.003.778.014.25.013.585-.095.916.698.343.814 1.166 2.813 1.268 3.017.102.203.17.44.034.71-.136.272-.204.44-.407.678-.203.238-.428.531-.61.713-.203.203-.414.422-.178.827.237.407 1.05 1.733 2.254 2.808 1.548 1.38 2.854 1.806 3.261
+            <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.738 5.494 2.027 7.807L0 32l8.418-2.007A15.93 15.93 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.27 22.516c-.343.965-1.99 1.845-2.742 1.963-.703.11-1.59.156-2.563-.16-.592-.19-1.352-.444-2.326-.87-4.094-1.77-6.768-5.94-6.972-6.217-.203-.277-1.657-2.203-1.657-4.203s1.05-2.985 1.422-3.393c.373-.407.812-.508 1.082-.508.27 0 .54.003.778.014.25.013.585-.095.916.698.343.814 1.166 2.813 1.268 3.017.102.203.17.44.034.71-.136.272-.204.44-.407.678-.203.238-.428.531-.61.713-.203.203-.414.422-.178.827.237.407 1.05 1.733 2.254 2.808 1.548 1.38 2.854 1.806 3.261 2.01.407.203.644.17.88-.102.237-.271.98-1.142 1.24-1.532.262-.39.525-.33.88-.2.356.135 2.254 1.065 2.643 1.258.39.194.643.29.745.45.1.16.1.93-.243 1.895z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
