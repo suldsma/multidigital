@@ -5,6 +5,7 @@ $asunto = "Nuevo Pedido/Consulta desde Multi digital Web";
 $headers = "MIME-Version: 1.0" . "\r\n";
 $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 // Reemplaza el remitente por un correo de tu dominio para evitar ser marcado como spam
+// ⚠️ IMPORTANTE: cambiá "tudominio.com" por el dominio real donde está alojada tu página
 $headers .= 'From: Web Multi digital <no-responder@tudominio.com>' . "\r\n";
 
 // 1. Verificar si la solicitud es un método POST

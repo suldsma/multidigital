@@ -131,13 +131,13 @@ if (contactForm) {
         const formData = new FormData(contactForm);
 
         fetch('enviar.php', { method: 'POST', body: formData })
-            .then(r => r.ok ? r.text() : Promise.reject())
+            .then(r => r.ok ? r.text() : r.text().then(msg => Promise.reject(msg)))
             .then(() => {
                 mostrarMensaje('✅ ¡Mensaje enviado! Te respondemos pronto 💜', 'exito');
                 contactForm.reset();
             })
-            .catch(() => {
-                mostrarMensaje('❌ Error al enviar. Escribinos por WhatsApp.', 'error');
+            .catch(msg => {
+                mostrarMensaje(typeof msg === 'string' && msg ? msg : '❌ Error al enviar. Escribinos por WhatsApp.', 'error');
             })
             .finally(() => {
                 btnEnviar.disabled = false;
@@ -193,3 +193,7 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('🎨 Multi Digital: JavaScript activo ✓');
+
+// ── 8. AÑO DINÁMICO EN EL FOOTER ──
+const anioEl = document.getElementById('anio');
+if (anioEl) anioEl.textContent = new Date().getFullYear();
