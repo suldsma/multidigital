@@ -1,5 +1,5 @@
 // ==========================================
-// MULTI DIGITAL - JAVASCRIPT (CORREGIDO)
+// MULTI DIGITAL - JAVASCRIPT
 // ==========================================
 
 // ── 1. MENÚ RESPONSIVE ──
@@ -34,20 +34,18 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
-// ── 3. PASOS CLICKEABLES - VER MÁS CORREGIDO ──
+// ── 3. PASOS CLICKEABLES ──
 document.querySelectorAll('.paso').forEach(paso => {
     const btnVerMas = paso.querySelector('.paso-ver-mas');
     const detalle   = paso.querySelector('.paso-detalle');
 
     if (btnVerMas && detalle) {
-        // Asegurar que el detalle arranca cerrado
         detalle.style.display = 'none';
 
         btnVerMas.addEventListener('click', (e) => {
-            e.stopPropagation(); // Evita conflictos con el click del paso entero
+            e.stopPropagation();
             const estaAbierto = paso.classList.contains('abierto');
 
-            // Cerrar todos los pasos primero (acordeón)
             document.querySelectorAll('.paso').forEach(p => {
                 p.classList.remove('abierto');
                 const d = p.querySelector('.paso-detalle');
@@ -56,7 +54,6 @@ document.querySelectorAll('.paso').forEach(paso => {
                 if (b) b.textContent = 'Ver más ▾';
             });
 
-            // Abrir el clickeado si estaba cerrado
             if (!estaAbierto) {
                 paso.classList.add('abierto');
                 detalle.style.display = 'block';
@@ -64,14 +61,13 @@ document.querySelectorAll('.paso').forEach(paso => {
             }
         });
 
-        // También funciona al hacer click en el paso completo
         paso.addEventListener('click', () => {
             btnVerMas.click();
         });
     }
 });
 
-// ── 4. BOTONES CONSULTAR → WHATSAPP (CORREGIDO) ──
+// ── 4. BOTONES CONSULTAR → WHATSAPP ──
 document.querySelectorAll('.btn-consultar').forEach(btn => {
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -87,7 +83,11 @@ document.querySelectorAll('.btn-consultar').forEach(btn => {
     });
 });
 
-// ── 5. FORMULARIO → FORMSPREE ──
+// ── 5. FORMULARIO DE CONTACTO ──
+const WHATSAPP_MODE = true;
+const FORMSPREE_URL = 'https://formspree.io/f/TU_ID_AQUI';
+const NUMERO_WHATSAPP = '543454172380';
+
 const contactForm = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
@@ -118,13 +118,21 @@ if (contactForm) {
         if (!nombre || !email || !mensaje) { mostrarMensaje('Por favor completá todos los campos.', 'error'); return; }
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { mostrarMensaje('Ingresá un email válido.', 'error'); return; }
 
+        if (WHATSAPP_MODE) {
+            const texto = `¡Hola! Soy ${nombre} (${email}).\n\n${mensaje}`;
+            const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(texto)}`;
+            mostrarMensaje('Abriendo WhatsApp... 💜', 'exito');
+            window.open(url, '_blank');
+            contactForm.reset();
+            return;
+        }
+
         const btnEnviar = contactForm.querySelector('button[type="submit"]');
         btnEnviar.disabled = true;
         const textoOriginal = btnEnviar.textContent;
         btnEnviar.textContent = 'Enviando...';
         mostrarMensaje('Enviando mensaje...', 'cargando');
 
-        const FORMSPREE_URL = 'https://formspree.io/f/TU_ID_AQUI';
         fetch(FORMSPREE_URL, {
             method: 'POST',
             body: new FormData(contactForm),
@@ -138,8 +146,6 @@ if (contactForm) {
 }
 
 // ── 6. ANIMACIONES SCROLL MEJORADAS CON TILT ──
-
-// Fade-up básico para todos los elementos animados
 const appearanceObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -154,7 +160,6 @@ document.querySelectorAll('.producto-card, .paso, .testimonio-card').forEach((el
     appearanceObserver.observe(el);
 });
 
-// Efecto tilt 3D en hover para tarjetas de producto
 document.querySelectorAll('.producto-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect  = card.getBoundingClientRect();
@@ -178,7 +183,6 @@ document.querySelectorAll('.producto-card').forEach(card => {
     });
 });
 
-// Efecto tilt suave en testimonios
 document.querySelectorAll('.testimonio-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
@@ -197,7 +201,6 @@ document.querySelectorAll('.testimonio-card').forEach(card => {
     });
 });
 
-// Efecto parallax suave en el hero al hacer scroll
 window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
     if (hero) {
@@ -208,7 +211,6 @@ window.addEventListener('scroll', () => {
         }
     }
 
-    // Sombra dinámica en header
     const header = document.querySelector('header');
     if (header) {
         header.style.boxShadow = window.scrollY > 50

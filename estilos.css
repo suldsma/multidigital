@@ -5,7 +5,7 @@
 
 :root {
     --morado:       #6b0f7a;
-    --morado-dark:  #4a0855;
+    --morado-dark:  #3d0946;
     --morado-light: #f3e5f5;
     --rosa:         #ff2298;
     --rosa-light:   #fff0f7;
@@ -27,6 +27,162 @@ body {
 }
 
 /* ==========================================
+   ÍCONOS SVG 
+   ========================================== */
+.feature-icon {
+    width: 22px;
+    height: 22px;
+    fill: white;
+    flex-shrink: 0;
+}
+
+.info-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    fill: var(--morado);
+}
+
+.info-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stars-svg {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 14px;
+}
+
+.star-svg {
+    width: 20px;
+    height: 20px;
+    fill: #ffd600;
+}
+
+.topbar-icon {
+    width: 15px;
+    height: 15px;
+    fill: white;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 3px;
+}
+
+.hero-badge-icon {
+    width: 18px;
+    height: 18px;
+    fill: var(--morado);
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.hero-img-badge {
+    font-size: 0.82em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.badge-icon {
+    width: 14px;
+    height: 14px;
+    fill: #333;
+    flex-shrink: 0;
+}
+
+.btn-icon {
+    width: 17px;
+    height: 17px;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.wa-icon {
+    width: 17px;
+    height: 17px;
+    fill: white;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.popular-badge-icon {
+    width: 13px;
+    height: 13px;
+    fill: #333;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+.fire-icon {
+    width: 13px;
+    height: 13px;
+    fill: white;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+/* Ícono grande del botón flotante de WhatsApp */
+.wa-icon-floating {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+/* Estrella suelta junto al "5/5" en las estadísticas del hero */
+.hero-rating-icon {
+    width: 18px;
+    height: 18px;
+    fill: #ffd600;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* ==========================================
+   UTILIDADES 
+   ========================================== */
+
+/* Centra ícono + texto en línea: botones "Consultar", badges, links con ícono */
+.icon-flex {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Igual que .icon-flex pero también centra horizontalmente (botones anchos) */
+.icon-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ícono dentro de botones grandes (Escribinos, Hablar por WhatsApp, Enviar Mensaje) */
+.icon-btn {
+    width: 17px;
+    height: 17px;
+    margin-right: 7px;
+    fill: currentColor;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Fila "5/5 ⭐" en las estadísticas del hero */
+.stat-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Link de email en el footer (blanco semi-transparente sobre fondo morado) */
+.footer-email-link {
+    color: rgba(255,255,255,0.7);
+}
+
+/* ==========================================
    TOPBAR
    ========================================== */
 .topbar {
@@ -43,7 +199,7 @@ body {
    HEADER
    ========================================== */
 header {
-    background: white;
+    background: rgb(235, 205, 243);
     padding: 14px 5%;
     display: flex;
     align-items: center;
@@ -59,8 +215,8 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 5px 15px 5px 5px;
+    background: rgba(7, 220, 227, 0.5);
+    padding: 5px 50px 5px 5px;
     border-radius: 50px;
 }
 
@@ -207,7 +363,7 @@ header {
     font-size: 1em;
     border: none; cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 6px 20px rgba(255,34,152,0.35);
+    box-shadow: 0 6px 20px rgba(255, 34, 152, 0.245);
 }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,34,152,0.45); }
 .btn-full { width: 100%; text-align: center; }
@@ -250,6 +406,7 @@ header {
     font-size: 6em;
     height: 100%;
 }
+.hero-img-fallback::after { content: '💕'; }
 .hero-img-badge {
     position: absolute;
     top: 20px; right: 20px;
@@ -387,10 +544,16 @@ header {
 }
 .producto-card:hover .card-img-wrap img { transform: scale(1.1); }
 
-.card-img-fallback {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 5em;
+/* Fallback cuando la imagen de producto/paso no carga: muestra un emoji centrado
+   sobre el fondo degradado en lugar del ícono roto del navegador */
+.card-img-fallback-active::after {
+    content: '🎀';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5em;
 }
 
 .card-badge {
@@ -511,13 +674,6 @@ header {
     transition: transform 0.5s ease;
 }
 .paso:hover .paso-img-wrap img { transform: scale(1.08); }
-
-/* Fallback si no carga la imagen del paso */
-.paso-img-fallback {
-    position: absolute; inset: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3.5em;
-}
 
 /* Contenido textual del paso */
 .paso-content { padding: 25px; text-align: center; }
@@ -661,7 +817,6 @@ header {
     border-bottom: 1px solid #f0f0f0;
 }
 .info-card:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.info-icono { font-size: 1.8em; }
 .info-titulo { font-weight: 800; color: var(--morado); font-size: 0.88em; margin-bottom: 3px; }
 
 .whatsapp-btn {
